@@ -1,0 +1,22 @@
+<form action="" (submit)="onAddPost(postForm)" #postForm="ngForm" >
+  <mat-card>
+    <mat-form-field class="example-full-width">
+      <input type="text" matInput placeholder="Title" name="title" ngModel 
+      #title="ngModel"
+      autocomplete="off"
+      required>
+      <mat-error *ngIf="title.invalid">Enter value title</mat-error>
+    </mat-form-field> <br>
+    <mat-form-field class="example-full-width">
+        <textarea type="text" matInput placeholder="Content" name="content" 
+        #content="ngModel"
+        autocomplete="on"
+        ngModel
+        autocomplete="off"
+        required
+        ></textarea>
+        <mat-error *ngIf="content.invalid">Enter value content</mat-error>
+      </mat-form-field><br>
+    <button mat-raised-button color="primary" (click)="onAddPost()">Post</button>
+  </mat-card>
+</form>
